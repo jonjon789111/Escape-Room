@@ -12,6 +12,30 @@ st.set_page_config(
     layout="centered"
 )
 
+import base64
+
+# LOAD BACKGROUND IMAGE
+with open("classroom_bg.png", "rb") as image_file:
+    encoded_image = base64.b64encode(
+        image_file.read()
+    ).decode()
+
+# APPLY BACKGROUND
+st.markdown(f"""
+<style>
+.stApp {{
+    background-image:
+        linear-gradient(rgba(10, 12, 18, 0.35),
+                        rgba(10, 12, 18, 0.35)),
+        url("data:image/png;base64,{encoded_image}");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}}
+</style>
+""", unsafe_allow_html=True)
 
 # ==================================
 # DARK ACADEMIA DESIGN
