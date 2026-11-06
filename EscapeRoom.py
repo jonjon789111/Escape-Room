@@ -15,7 +15,7 @@ st.set_page_config(
 import base64
 
 # LOAD BACKGROUND IMAGE
-with open("classroom_bg.png", "rb") as image_file:
+with open("classroom_bg.jpg", "rb") as image_file:
     encoded_image = base64.b64encode(
         image_file.read()
     ).decode()
